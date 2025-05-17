@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поисковые системы</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px 0;
+            background-color: #f0f0f0;
+            box-sizing: border-box;
+        }
+
+        .title-asl {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .title-asl .char-a { color: #FF4B03; }
+        .title-asl .char-s { color: gold; }
+        .title-asl .char-l { color: royalblue; }
+
+        .disclaimer-text {
+            font-size: 0.9em;
+            color: #333333;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            max-width: 700px;
+            padding: 0 15px;
+            line-height: 1.4;
+        }
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+            gap: 10px;
+            padding: 10px;
+            width: 100%;
+            max-width: 570px;
+            margin: 0 auto 20px auto;
+            box-sizing: border-box;
+        }
+
+        .button-grid button {
+            aspect-ratio: 1 / 1;
+            height: auto;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-size: 0;
+        }
+
+        .button-grid button:hover {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .button-grid button img {
+            max-width: 70%;
+            max-height: 70%;
+            display: block;
+        }
+
+        .button-grid button img.img-fill-button {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            max-width: none;
+            max-height: none;
+        }
+
+        .button-grid button.button-swisscows-bg { background-color: #181a1c; }
+        .button-grid button.button-google-bg { background-color: #D8FFFF; }
+        .button-grid button.button-gibiru-bg { background-color: #FFF6CC; }
+        .button-grid button.button-brave-bg { background-color: #D8FFED; }
+        .button-grid button.button-naver-bg { background-color: #F0FFCC; }
+        .button-grid button.button-qwant-bg { background-color: #333333; }
+        .button-grid button.button-yippy-bg { background-color: #D8EFFF; }
+
+        .footer-text {
+            margin-top: 20px;
+            font-size: 1em;
+            color: darkblue;
+            font-weight: bold;
+            text-align: center;
+        }
+         .alt-text-placeholder {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            padding: 5px;
+            word-break: break-word;
+        }
+    </style>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="title-asl">
+        <span class="char-a">A</span><span class="char-s">S</span><span class="char-l">L</span>
+    </div>
+
+    <div class="disclaimer-text">
+        Users are advised to exercise caution when accessing the lesser-known search engines featured herein. Please be aware that no online platform can be considered entirely impervious to security vulnerabilities or potential exploitation.
+    </div>
+
+    <div class="button-grid">
+        <button class="button-google-bg" data-url-to-open="https://www.google.com/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478274/Google_pxhndf.png" alt="Google"></button>
+        <button data-url-to-open="https://www.bing.com/"><img class="img-fill-button" src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478284/Bing_cbfgti.png" alt="Bing"></button>
+        <button data-url-to-open="https://search.yahoo.com/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478275/Yahoo_qw9jl5.png" alt="Yahoo"></button>
+        <button data-url-to-open="https://duckduckgo.com/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478274/DuckDuckGo_u5cbia.png" alt="DuckDuckGo"></button>
+        <button class="button-swisscows-bg" data-url-to-open="https://swisscows.com/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478274/Swisscows_eacofz.png" alt="Swisscows"></button>
+
+        <button data-url-to-open="https://yandex.ru/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478274/Yandex_fsda4e.png" alt="Yandex"></button>
+        <button class="button-brave-bg" data-url-to-open="https://search.brave.com/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478274/Brave_vsetbg.png" alt="Brave"></button>
+        <button data-url-to-open="https://www.startpage.com/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478274/Startpage_saru5c.png" alt="Startpage"></button>
+        <button class="button-qwant-bg" data-url-to-open="https://www.qwant.com/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478274/Qwant_zesbwk.png" alt="Qwant"></button>
+        <button data-url-to-open="https://www.baidu.com/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478553/Baidu_u2djqk.png" alt="Baidu"></button>
+
+        <button data-url-to-open="https://metager.org/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478274/Metager_nple1j.png" alt="MetaGer"></button>
+        <button data-url-to-open="https://searx.space/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478274/SearXNG_dmvva9.png" alt="Searx"></button>
+        <button class="button-gibiru-bg" data-url-to-open="https://gibiru.com/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478284/Gibiru_uat8zx.png" alt="Gibiru"></button>
+        <button data-url-to-open="https://www.searchencrypt.com/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478284/Searchencrypt_wrllav.png" alt="Searchencrypt"></button>
+        <button data-url-to-open="https://www.mojeek.com/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478274/Mojeek_ebgbwn.png" alt="Mojeek"></button>
+
+        <button data-url-to-open="https://search.disconnect.me/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478284/DisconnectSearch_pgjre4.png" alt="Disconnect"></button>
+        <button data-url-to-open="https://yep.com/"><img class="img-fill-button" src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747480785/Yep_e1eetp.png" alt="Yep"></button>
+        <button data-url-to-open="https://search.aol.com/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747480785/AOL_rrsd8c.png" alt="AOLSearch"></button>
+        <button class="button-naver-bg" data-url-to-open="https://www.naver.com/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747481797/Naver_rmftvl.png" alt="Naver"></button>
+        <button data-url-to-open="https://www.ecosia.org/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478275/Ecosia_kxzfrd.png" alt="Ecosia"></button>
+
+        <button data-url-to-open="https://www.dogpile.com/"><img class="img-fill-button" src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478275/Dogpile_kqln7u.png" alt="Dogpile"></button>
+        <button data-url-to-open="https://www.webcrawler.com/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478276/Webcrawler_zyt051.png" alt="WebCrawler"></button>
+        <button data-url-to-open="https://www.info.com/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478275/Info.com_pxcd6l.png" alt="Info.com"></button>
+        <button data-url-to-open="https://openverse.org/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747478275/Openverse_xbspbm.png" alt="Openverse"></button>
+        <button class="button-yippy-bg" data-url-to-open="https://yippy.com/"><img src="https://res.cloudinary.com/dz6vzivzp/image/upload/v1747481797/Yippy_d2cjsc.png" alt="Yippy"></button>
+    </div>
+
+    <div class="footer-text">
+        Powered by Thre_Light ⛈️
+    </div>
+
+    <script>
+        // Функция для открытия внешней ссылки (потенциально во встроенном браузере Telegram на мобильных)
+        function openExternalLink(url) {
+            if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.openLink) {
+                console.log(`Попытка открыть ссылку через WebApp.openLink: ${url}`);
+                window.Telegram.WebApp.openLink(url);
+            } else {
+                console.error('Telegram WebApp API или метод openLink не доступны. Открываем в новой вкладке как fallback.');
+                window.open(url, '_blank'); // Запасной вариант для обычных браузеров
+            }
+        }
+
+        // Основная логика инициализации Telegram WebApp (полноэкранный режим и т.д.)
+        try {
+            if (window.Telegram && window.Telegram.WebApp) {
+                const WebApp = window.Telegram.WebApp;
+                WebApp.ready();
+                console.log('WebApp.ready() вызван.');
+
+                WebApp.onEvent('activated', function() { console.log('Mini App activated. isActive:', WebApp.isActive); });
+                WebApp.onEvent('deactivated', function() { console.log('Mini App deactivated. isActive:', WebApp.isActive); });
+
+                if (WebApp.isVersionAtLeast && WebApp.isVersionAtLeast('8.0') && WebApp.requestFullscreen) {
+                    console.log('API 8.0+ доступен. Запрос WebApp.requestFullscreen().');
+                    if (!WebApp.isFullscreen) WebApp.requestFullscreen();
+                    else console.log('Уже в полноэкранном режиме.');
+
+                    if (WebApp.setHeaderColor) {
+                        const headerColor = WebApp.themeParams.secondary_bg_color || WebApp.themeParams.bg_color || '#f0f0f0';
+                        WebApp.setHeaderColor(headerColor);
+                        console.log('Цвет хедера установлен:', headerColor);
+                    }
+                    WebApp.onEvent('fullscreenChanged', function() {
+                        console.log('fullscreenChanged. Активен:', WebApp.isFullscreen);
+                        if (WebApp.isFullscreen) {
+                            if (WebApp.safeAreaInset) console.log('safeAreaInset:', JSON.stringify(WebApp.safeAreaInset));
+                            if (WebApp.contentSafeAreaInset) console.log('contentSafeAreaInset:', JSON.stringify(WebApp.contentSafeAreaInset));
+                        }
+                    });
+                    WebApp.onEvent('fullscreenFailed', function(e) {
+                        console.error('fullscreenFailed. Ошибка:', e.error);
+                        if (e.error === 'UNSUPPORTED' && WebApp.expand) { WebApp.expand(); console.log('requestFullscreen не поддерживается. Вызван WebApp.expand().');}
+                    });
+                    WebApp.onEvent('safeAreaChanged', function() { if (WebApp.safeAreaInset) console.log('safeAreaChanged:', JSON.stringify(WebApp.safeAreaInset)); });
+                    WebApp.onEvent('contentSafeAreaChanged', function() { if (WebApp.contentSafeAreaInset) console.log('contentSafeAreaChanged:', JSON.stringify(WebApp.contentSafeAreaInset)); });
+                } else if (WebApp.expand) {
+                    console.log('requestFullscreen API (8.0+) не доступен. Используем WebApp.expand().');
+                    WebApp.expand();
+                    if (WebApp.setHeaderColor) { WebApp.setHeaderColor(WebApp.themeParams.bg_color || '#f0f0f0'); }
+                } else {
+                    console.error('Ни requestFullscreen, ни expand методы не доступны.');
+                }
+            } else {
+                console.error('Telegram WebApp API не найден в основном блоке.');
+            }
+        } catch (e) {
+            console.error('Ошибка при инициализации Telegram WebApp:', e);
+        }
+
+        // Логика, зависящая от полной загрузки DOM
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOMContentLoaded сработало.');
+
+            // Назначаем обработчики кликов на кнопки для открытия внешних ссылок
+            document.querySelectorAll('.button-grid button[data-url-to-open]').forEach(button => {
+                button.addEventListener('click', function() {
+                    const urlToOpen = this.dataset.urlToOpen;
+                    if (urlToOpen) {
+                        openExternalLink(urlToOpen);
+                    }
+                });
+            });
+            console.log('Обработчики кликов для кнопок (openExternalLink) установлены.');
+
+            // Обработка ошибок изображений
+            const images = document.querySelectorAll('.button-grid button img');
+            images.forEach(img => {
+                img.onerror = function() {
+                    this.style.display = 'none'; // Скрыть сломанное изображение
+                    const altText = this.alt || 'Лого';
+                    const parentButton = this.parentNode;
+                    if (parentButton && !parentButton.querySelector('.alt-text-placeholder')) {
+                        const placeholder = document.createElement('span');
+                        placeholder.className = 'alt-text-placeholder';
+                        placeholder.textContent = altText;
+                        // Стили для placeholder уже определены в <style> или можно задать тут
+                        parentButton.appendChild(placeholder);
+                    }
+                };
+                img.setAttribute('draggable', 'false');
+            });
+            console.log('Обработчики ошибок для изображений установлены.');
+        });
+    </script>
+</body>
+</html>
